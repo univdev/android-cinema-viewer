@@ -80,6 +80,7 @@ public class MovieSelector extends LinearLayout {
     }
 
     public void setThumbnail(int thumbnail) {
+        this.thumbnail.setTag(thumbnail);
         this.thumbnail.setImageResource(thumbnail);
     }
 
