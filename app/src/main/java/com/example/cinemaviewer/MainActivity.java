@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<MovieSchema> movies = new ArrayList();
         movies.add(new MovieSchema(R.drawable.badman,"악인전", "신파극이지만 재밌습니다.", 4.5f));
+        movies.add(new MovieSchema(R.drawable.aladin,"알라딘", "오랫만에 찾아온 디즈니의 실사영화입니다.", 4.5f));
+        movies.add(new MovieSchema(R.drawable.worm,"기생충", "한국형 재난영화 등장입니다.", 4.5f));
 
         this.setMovies(movies);
     }
