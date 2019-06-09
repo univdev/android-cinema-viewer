@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.lang.ref.Reference;
@@ -17,6 +18,8 @@ public class MovieSelector extends LinearLayout {
     private ImageView thumbnail;
     private TextView title;
     private TextView description;
+    private RatingBar rating;
+    private TextView ratingText;
 
     public MovieSelector(Context context) {
         super(context);
@@ -46,6 +49,8 @@ public class MovieSelector extends LinearLayout {
         thumbnail = (ImageView) findViewById(R.id.thumbnail);
         title = (TextView) findViewById(R.id.label);
         description = (TextView) findViewById(R.id.description);
+        rating = (RatingBar) findViewById(R.id.score);
+        ratingText = (TextView) findViewById(R.id.score_text);
     }
 
     private void setTypedArray(TypedArray arr) {
@@ -57,6 +62,13 @@ public class MovieSelector extends LinearLayout {
 
         String description = arr.getString(R.styleable.movie_selector_description);
         this.setDescription(description);
+
+        float score = arr.getFloat(R.styleable.movie_selector_score, 5);
+        this.setScore(score);
+    }
+
+    private String getScoreFormat(float score) {
+        return String.format("%.1f / %d", score, 5);
     }
 
     public void setTitle(String title) {
@@ -69,5 +81,10 @@ public class MovieSelector extends LinearLayout {
 
     public void setThumbnail(int thumbnail) {
         this.thumbnail.setImageResource(thumbnail);
+    }
+
+    public void setScore(float score) {
+        this.rating.setRating(score);
+        this.ratingText.setText(getScoreFormat(score));
     }
 }
