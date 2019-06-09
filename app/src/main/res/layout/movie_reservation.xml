@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:rowCount="5"
-                    android:columnCount="5">
+                    android:columnCount="4">
                 </GridLayout>
                 <View
                     android:layout_width="match_parent"
