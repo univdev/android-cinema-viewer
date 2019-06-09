@@ -37,7 +37,7 @@ public class ReservationActivity extends AppCompatActivity {
 
     private void init() {
         GridLayout grid = (GridLayout) findViewById(R.id.seat_grid);
-        for (int i = 0; i < 25; i += 1) {
+        for (int i = 0; i < 20; i += 1) {
             GridLayout.LayoutParams params = new GridLayout.LayoutParams();
             params.setMargins(10, 10, 10, 10);
 
