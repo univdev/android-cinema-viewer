@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cinemaviewer.schema.ReviewSchema;
 
@@ -61,6 +62,7 @@ public class MovieDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 reservation(v);
+                Toast.makeText(getApplicationContext(), "예매를 시작합니다.", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -104,6 +106,6 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     private void reservation(View view) {
         Intent intent = new Intent(this, ReservationActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 200);
     }
 }
