@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<MovieSchema> movies = new ArrayList();
         movies.add(new MovieSchema(R.drawable.badman,"악인전", "신파극이지만 재밌습니다.", 4.5f));
-        movies.add(new MovieSchema("걸캅스", "페미니즘 영화입니다. 발로 걷어차주세요."));
-        movies.add(new MovieSchema("영혼보내기", "예매 후 취소하는게 영혼보내기 ㅇㅈㄹ ㅋㅋㅋㅋ"));
 
         this.setMovies(movies);
     }
