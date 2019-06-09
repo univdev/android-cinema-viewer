@@ -6,4 +6,9 @@
         <attr name="description" format="string"></attr>
         <attr name="score" format="float"></attr>
     </declare-styleable>
+    <declare-styleable name="movie_review">
+        <attr name="author" format="string"></attr>
+        <attr name="date" format="string"></attr>
+        <attr name="comment" format="string"></attr>
+    </declare-styleable>
 </resources>
