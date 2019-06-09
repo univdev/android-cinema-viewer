@@ -4,7 +4,7 @@ public class MovieSchema {
     public int thumbnail;
     public String title;
     public String description;
-    public int score;
+    public float score;
 
     public MovieSchema() {
         super();
@@ -21,7 +21,7 @@ public class MovieSchema {
         this.description = description;
     }
 
-    public MovieSchema(int thumbnail, String title, String description, int score) {
+    public MovieSchema(int thumbnail, String title, String description, float score) {
         this.thumbnail = thumbnail;
         this.title = title;
         this.description = description;
