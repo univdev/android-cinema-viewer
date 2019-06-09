@@ -1,11 +1,13 @@
 package com.example.cinemaviewer;
 
+import android.content.Intent;
 import android.media.Image;
 import android.media.Rating;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -22,6 +24,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private TextView description;
     private RatingBar rating;
     private ArrayList<ReviewSchema> reviews;
+    private Button reservationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,22 +47,29 @@ public class MovieDetailActivity extends AppCompatActivity {
         this.reviews.add(new ReviewSchema("댓글6", "2019-06-09", "안녕하세요? 댓글입니다."));
         this.reviews.add(new ReviewSchema("댓글7", "2019-06-09", "안녕하세요? 댓글입니다."));
 
-
         this.thumbnail = (ImageView) findViewById(R.id.thumbnail);
         this.title = (TextView) findViewById(R.id.title);
         this.description = (TextView) findViewById(R.id.description);
         this.rating = (RatingBar) findViewById(R.id.rating);
+        this.reservationButton = (Button) findViewById(R.id.reservation_button);
 
-//        this.setThumbnail(thumbnail);
+        this.setThumbnail(thumbnail);
         this.setTitle(title);
         this.setDescription(description);
         this.setScore(score);
+        this.reservationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reservation(v);
+            }
+        });
 
         this.setReviews();
     }
 
     public void setThumbnail(int resource) {
         this.thumbnail.setImageResource(resource);
+        this.thumbnail.setTag(resource);
     }
 
     public void setTitle(String title) {
@@ -90,5 +100,10 @@ public class MovieDetailActivity extends AppCompatActivity {
 
             movieList.addView(reviewTemplate);
         }
+    }
+
+    private void reservation(View view) {
+        Intent intent = new Intent(this, ReservationActivity.class);
+        startActivity(intent);
     }
 }
